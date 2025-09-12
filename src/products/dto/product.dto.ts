@@ -1,3 +1,3 @@
-export class ProductDto {
+export default interface ProductDto {
   code: number;
 }

@@ -5,6 +5,7 @@ import { TokenModule } from './token/token.module';
 import { AuthModule } from './auth/auth.module';
 import { ProductsModule } from './products/products.module';
 import * as dotenv from 'dotenv';
+import { ProductEntity } from './products/entity/product.entity';
 
 dotenv.config();
 
@@ -17,7 +18,7 @@ dotenv.config();
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [TokenEntity],
+      entities: [TokenEntity,ProductEntity],
       synchronize: true, 
     }),
     TokenModule,
