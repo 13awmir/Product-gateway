@@ -5,7 +5,6 @@ import { Repository } from "typeorm";
 import { ProductEntity } from "./entity/product.entity";
 import { InjectRepository } from "@nestjs/typeorm";
 import ProductDto from "./dto/product.dto";
-import CreateProductDto from "./dto/createProduct.dto";
 
 @Injectable()
 export class ProductsService {
@@ -67,5 +66,10 @@ export class ProductsService {
     const product = await this.ProductRepository.findOneBy(code);
     if (!product) throw new NotFoundException("product not found");
     return { product };
+  }
+
+  async findAllFromDb() {
+    const products = await this.ProductRepository.find({where: {}});
+    return products;
   }
 }

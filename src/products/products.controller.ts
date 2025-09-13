@@ -1,6 +1,6 @@
-import { Body, Controller, Get, Param } from "@nestjs/common";
+import { Controller, Get, Param } from "@nestjs/common";
 import { ProductsService } from "./products.service";
-import  ProductDto from "./dto/product.dto";
+import ProductDto from "./dto/product.dto";
 
 @Controller("products")
 export class ProductsController {
@@ -15,7 +15,12 @@ export class ProductsController {
   //   return this.productsService.syncProducts();
   // }
   @Get("find/:code")
-  async findByCode(@Param() findDto : ProductDto) {
+  async findByCode(@Param() findDto: ProductDto) {
     return this.productsService.findByCode(findDto);
+  }
+
+  @Get("all")
+  findAllFromDb() {
+    return this.productsService.findAllFromDb();
   }
 }
