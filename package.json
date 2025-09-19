@@ -28,6 +28,7 @@
     "@nestjs/schedule": "^6.0.0",
     "@nestjs/typeorm": "^11.0.0",
     "axios": "^1.11.0",
+    "csv-writer": "^1.6.0",
     "dotenv": "^17.2.2",
     "pg": "^8.16.3",
     "reflect-metadata": "^0.2.2",
